@@ -10,6 +10,19 @@
     <name>Maven Tiles Parent POM</name>
     <description>SprintHive Maven tile modules</description>
     <url>https://sprinthive.com</url>
+	<developers>
+		<developer>
+			<id>tristram</id>
+			<name>Dale Tristram</name>
+			<email>dale.tristram@sprinthive.com</email>
+			<organization>SprintHive</organization>
+			<organizationUrl>https://sprinthive.com</organizationUrl>
+			<roles>
+				<role>Software Engineer</role>
+			</roles>
+			<timezone>+2</timezone>
+		</developer>
+	</developers>
 
     <licenses>
         <license>
@@ -25,5 +38,23 @@
 
     <modules>
         <module>code-quality</module>
+        <module>maven-release</module>
     </modules>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>io.repaint.maven</groupId>
+                <artifactId>tiles-maven-plugin</artifactId>
+                <version>2.10</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <filtering>false</filtering>
+                    <tiles>
+                        <tile>com.sprinthive.tiles:maven-release:0.1</tile>
+                    </tiles>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
