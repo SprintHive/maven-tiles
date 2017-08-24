@@ -8,6 +8,9 @@
                 <artifactId>maven-checkstyle-plugin</artifactId>
                 <version>2.17</version>
                 <configuration>
+                    <failOnViolation>true</failOnViolation>
+                    <violationSeverity>warning</violationSeverity>
+                    <logViolationsToConsole>true</logViolationsToConsole>
                     <checkstyleRules>
                         <module name="Checker">
                             <property name="charset" value="UTF-8"/>
@@ -235,6 +238,10 @@
                                 </module>
                                 <module name="CommentsIndentation"/>
                             </module>
+                            <module name="SuppressionFilter">
+                                <property name="file" value="src/main/resources/checkstyle-suppressions.xml"/>
+                                <property name="optional" value="true"/>
+                            </module>
                         </module>
                     </checkstyleRules>
                 </configuration>
@@ -252,9 +259,6 @@
                         <goals>
                             <goal>check</goal>
                         </goals>
-                        <configuration>
-                            <failOnViolation>true</failOnViolation>
-                        </configuration>
                     </execution>
                 </executions>
             </plugin>
