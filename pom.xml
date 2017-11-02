@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.sprinthive.tiles</groupId>
     <artifactId>parent-tiles</artifactId>
-    <version>0.1</version>
+    <version>0.2</version>
     <packaging>pom</packaging>
 
     <name>Maven Tiles Parent POM</name>
